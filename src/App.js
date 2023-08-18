@@ -29,7 +29,7 @@ function App() {
     textAlign: 'left',
     padding: '20px',
     border: '1px solid #ccc',
-    borderRadius: '5px',
+    borderRadius: '10px',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)',
   };
 

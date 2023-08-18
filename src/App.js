@@ -10,7 +10,7 @@ function App() {
   };
 
   const handleDelete = () => {
-    setName(''); // Clear the name field
+    setName(''); 
   };
 
   return (

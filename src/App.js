@@ -4,15 +4,21 @@ function App() {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [age, setAge] = useState('');
-  const [isEditing, setIsEditing] = useState(false); 
+  const [isEditing, setIsEditing] = useState(false);
+
+  const handleDelete = () => {
+    setName('');
+    setSurname('');
+    setAge('');
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (isEditing) {
-      
+      // Handle edit mode
       setIsEditing(false);
     } else {
-      
+      // Handle submit mode
       alert(`Name: ${name}\nSurname: ${surname}\nAge: ${age}`);
     }
   };
@@ -21,7 +27,7 @@ function App() {
     textAlign: 'center',
     padding: '20px',
     fontFamily: 'Arial, sans-serif',
-    backgroundColor: 'powderblue', 
+    backgroundColor: 'powderblue',
   };
 
   const formStyle = {
@@ -58,7 +64,9 @@ function App() {
       <h1 style={{ marginBottom: '20px' }}>Answer the Following Questions</h1>
       <form onSubmit={handleSubmit} style={formStyle}>
         <div style={{ marginBottom: '10px' }}>
-          <label htmlFor="name" style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>What is your Name?</label>
+          <label htmlFor="name" style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>
+            What is your Name?
+          </label>
           <input
             type="text"
             id="name"
@@ -69,7 +77,9 @@ function App() {
           />
         </div>
         <div style={{ marginBottom: '10px' }}>
-          <label htmlFor="surname" style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>What is your Surname?</label>
+          <label htmlFor="surname" style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>
+            What is your Surname?
+          </label>
           <input
             type="text"
             id="surname"
@@ -80,7 +90,9 @@ function App() {
           />
         </div>
         <div style={{ marginBottom: '10px' }}>
-          <label htmlFor="age" style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>How old are you?</label>
+          <label htmlFor="age" style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>
+            How old are you?
+          </label>
           <input
             type="text"
             id="age"
@@ -98,10 +110,17 @@ function App() {
           )}
           <button
             type="button"
-            onClick={() => setIsEditing(!isEditing)} 
+            onClick={() => setIsEditing(!isEditing)}
             style={buttonStyle}
           >
             {isEditing ? 'Cancel' : 'Edit'}
+          </button>
+          <button
+            type="button"
+            onClick={handleDelete}
+            style={buttonStyle}
+          >
+            Delete
           </button>
         </div>
       </form>

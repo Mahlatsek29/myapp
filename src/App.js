@@ -55,7 +55,7 @@ function App() {
 
   return (
     <div style={containerStyle}>
-      <h1 style={{ marginBottom: '20px' }}>Answer the Following Questions</h1>
+      <h1 style={{ marginBottom: '20px' }}>This is the Main</h1>
       <form onSubmit={handleSubmit} style={formStyle}>
         <div style={{ marginBottom: '10px' }}>
           <label htmlFor="name" style={{ fontWeight: 'bold', display: 'block', marginBottom: '5px' }}>What is your Name?</label>

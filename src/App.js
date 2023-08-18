@@ -18,7 +18,7 @@ function App() {
       <h1>Answer the Following Question</h1>
       <br />
       <form onSubmit={handleSubmit}>
-        <div>What is your name?</div>
+        <div>What is your surname?</div>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="submit" />

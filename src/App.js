@@ -18,17 +18,19 @@ function App() {
       <h1>Answer the Following Question</h1>
       <br />
       <form onSubmit={handleSubmit}>
-        <div>What is your surname?</div>
+        <div>What is your Name?</div>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="submit" />
         <button onClick={handleDelete}>Delete</button>
         <br/>
+        <div>What is your Surname?</div>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="submit" />
         <button onClick={handleDelete}>Delete</button>
         <br/>
+        <div> How old are you?</div>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="submit" />

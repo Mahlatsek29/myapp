@@ -4,23 +4,24 @@ function App() {
   const [name, setName] = useState('');
   const [surname, setSurname] = useState('');
   const [age, setAge] = useState('');
+  const [isEditing, setIsEditing] = useState(false); 
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Name: ${name}\nSurname: ${surname}\nAge: ${age}`);
-  };
-
-  const handleDelete = () => {
-    setName('');
-    setSurname('');
-    setAge('');
+    if (isEditing) {
+      
+      setIsEditing(false);
+    } else {
+      
+      alert(`Name: ${name}\nSurname: ${surname}\nAge: ${age}`);
+    }
   };
 
   const containerStyle = {
     textAlign: 'center',
     padding: '20px',
     fontFamily: 'Arial, sans-serif',
-    backgroundColor: 'powderblue', // Set background color to powder blue
+    backgroundColor: 'powderblue', 
   };
 
   const formStyle = {
@@ -64,6 +65,7 @@ function App() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             style={inputStyle}
+            readOnly={!isEditing}
           />
         </div>
         <div style={{ marginBottom: '10px' }}>
@@ -74,6 +76,7 @@ function App() {
             value={surname}
             onChange={(e) => setSurname(e.target.value)}
             style={inputStyle}
+            readOnly={!isEditing}
           />
         </div>
         <div style={{ marginBottom: '10px' }}>
@@ -84,11 +87,22 @@ function App() {
             value={age}
             onChange={(e) => setAge(e.target.value)}
             style={inputStyle}
+            readOnly={!isEditing}
           />
         </div>
         <div>
-          <button type="submit" style={buttonStyle}>Submit</button>
-          <button type="button" onClick={handleDelete} style={buttonStyle}>Delete</button>
+          {isEditing ? (
+            <button type="submit" style={buttonStyle}>Save</button>
+          ) : (
+            <button type="submit" style={buttonStyle}>Submit</button>
+          )}
+          <button
+            type="button"
+            onClick={() => setIsEditing(!isEditing)} 
+            style={buttonStyle}
+          >
+            {isEditing ? 'Cancel' : 'Edit'}
+          </button>
         </div>
       </form>
     </div>

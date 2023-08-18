@@ -9,6 +9,10 @@ function App() {
     alert("My name is " + name);
   };
 
+  const handleDelete = () => {
+    setName(''); // Clear the name field
+  };
+
   return (
     <div className="App">
       <h1>Answer the Following Questions</h1>
@@ -18,6 +22,7 @@ function App() {
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         <input type="submit" />
       </form>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 }
